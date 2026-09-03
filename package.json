@@ -1,0 +1,41 @@
+{
+  "name": "libsql-plugkit-client",
+  "version": "0.0.15",
+  "description": "Drop-in @libsql/client replacement backed by plugkit.wasm — one cross-platform wasm instead of per-arch NAPI binaries",
+  "type": "module",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./src/index.js",
+      "types": "./src/index.d.ts"
+    }
+  },
+  "files": [
+    "src/",
+    "scripts/",
+    "README.md"
+  ],
+  "scripts": {
+    "postinstall": "node scripts/install-wasm.mjs || echo 'plugkit-wasm install deferred to first run'",
+    "test": "node tests/smoke.mjs"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AnEntrypoint/libsql-plugkit-client.git"
+  },
+  "keywords": [
+    "libsql",
+    "sqlite",
+    "wasm",
+    "plugkit",
+    "busybase",
+    "vector"
+  ],
+  "author": "AnEntrypoint",
+  "license": "MIT"
+}
